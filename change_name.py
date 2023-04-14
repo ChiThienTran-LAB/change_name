@@ -6,12 +6,12 @@ from PIL import Image
 class App(QWidget):
     def __init__(self):
         super().__init__()
-        self.title = 'Đổi tên và chỉnh sửa kích thước ảnh trong thư mục'
-        self.left = 500
-        self.top = 100
-        self.width = 400
-        self.height = 200
-        self.initUI()
+        self.title = 'Rename and resize photos by Thien Tran'
+        self.left = 500 #vị trí xuất hiện của cửa sổ
+        self.top = 100 #vị trí xuất hiện của cửa sổ
+        self.width = 400 #chiều rộng cửa sổ
+        self.height = 200 #chiều cao cửa sổ
+        self.initUI() #khởi tạo giao diện
 
     def initUI(self):
         self.setWindowTitle(self.title)
