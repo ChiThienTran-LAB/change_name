@@ -57,7 +57,7 @@ class App(QWidget):
         self.button.clicked.connect(self.startRename)
         
         self.button = QPushButton('Cảm ơn cái coi', self)
-        self.button.move(200, 200) # Tăng độ cao của nút
+        self.button.move(140, 200) # Tăng độ cao của nút
         self.button.clicked.connect(self.buttonThanks)
         
         self.show()
