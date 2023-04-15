@@ -110,7 +110,7 @@ class App(QWidget):
             del self.file_paths
             self.selected_files_label.setText('')
         else:
-            QMessageBox.warning(self, 'Thông báo', 'Không có ảnh để xóa!')
+            QMessageBox.warning(self, 'Thông báo', 'Không có ảnh được chọn để xóa!')
     
     def buttonThanks(self):
         msgBox = QMessageBox()
