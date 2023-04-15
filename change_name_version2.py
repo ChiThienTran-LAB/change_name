@@ -13,14 +13,14 @@ class App(QWidget):
         self.setWindowTitle('Rename and resize photos by Thien Tran')
         self.setGeometry(500, 100, 500, 230)
 
-        self.label = QLabel('Chọn đường dẫn thư mục:', self)
+        self.label = QLabel('Chọn đường dẫn thư mục hoặc ảnh riêng lẻ:', self)
         self.label.move(20, 20)
 
         self.path_label = QLabel(self) 
         self.path_label.move(20, 80) 
         self.path_label.setFixedWidth(350) 
 
-        self.select_label = QLabel('Chọn ảnh:', self)
+        self.select_label = QLabel('Thông tin ảnh:', self)
         self.select_label.move(20, 100)
 
         self.selected_files_label = QLabel(self) 
@@ -53,11 +53,17 @@ class App(QWidget):
 
         self.button = QPushButton('Thực hiện', self)
         self.button.move(260, 160)
+        self.button.setStyleSheet("background-color: red;")
         self.button.clicked.connect(self.startRename)
         
-        self.button = QPushButton('Cảm ơn cái coi', self)
+        self.button = QPushButton('Cảm ơn tác giả!❤️', self)
         self.button.move(20, 200)
         self.button.clicked.connect(self.buttonThanks)
+        
+        self.button = QPushButton('Github', self)
+        self.button.move(380, 200)
+        self.button.setStyleSheet("background-color: yellow;")
+        self.button.clicked.connect(self.sourceGithub)
         
         self.exit_button = QPushButton('Thoát', self)
         self.exit_button.move(380, 160)
@@ -111,6 +117,16 @@ class App(QWidget):
         msgBox.setWindowTitle('Cảm ơn')
         msgBox.setText('Donate me: <a href="https://www.paypal.me/chithientran">https://www.paypal.me/chithientran</a>')
         msgBox.setStyleSheet("QLabel{min-width: 300px;}")
+        label = msgBox.findChild(QLabel, "qt_msgbox_label")
+        if label is not None:
+            label.setOpenExternalLinks(True)
+        msgBox.exec_()
+    
+    def sourceGithub(self):
+        msgBox = QMessageBox()
+        msgBox.setWindowTitle('Nguồn code')
+        msgBox.setText('Link Github: <a href="https://github.com/ChiThienTran-LAB/change_name.git">https://github.com/ChiThienTran-LAB/change_name.git</a>')
+        msgBox.setStyleSheet("QLabel{min-width: 400px;}")
         label = msgBox.findChild(QLabel, "qt_msgbox_label")
         if label is not None:
             label.setOpenExternalLinks(True)
