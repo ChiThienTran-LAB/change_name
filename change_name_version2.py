@@ -143,7 +143,7 @@ class App(QWidget):
                     old_file_path = os.path.join(self.folder_path, filename)
                     new_file_path = os.path.join(self.folder_path, new_filename)
                     im = Image.open(old_file_path)
-                    new_width = 700
+                    new_width = 600
                     new_height = int(new_width * im.size[1] / im.size[0])
                     im_resized = im.resize((new_width, new_height))
                     im_resized.save(new_file_path)
@@ -156,7 +156,7 @@ class App(QWidget):
                 old_file_path = file_path
                 new_file_path = os.path.join(os.path.dirname(file_path), new_filename)
                 im = Image.open(old_file_path)
-                new_width = 700
+                new_width = 600
                 new_height = int(new_width * im.size[1] / im.size[0])
                 im_resized = im.resize((new_width, new_height))
                 im_resized.save(new_file_path)
